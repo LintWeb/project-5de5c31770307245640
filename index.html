@@ -3,9 +3,370 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>project-5de5c31770307245640</title>
+    <title>Halishahar Turf - Soccer Field in Chittagong</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: #2c5530;
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .logo span {
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 2rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        nav ul li a:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(44, 85, 48, 0.8), rgba(44, 85, 48, 0.8)), url('https://images.unsplash.com/photo-1574623452334-1e0ac2b3ccb4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            margin-top: 70px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .rating {
+            display: inline-flex;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            margin-bottom: 2rem;
+        }
+
+        .stars {
+            color: #ffd700;
+            margin-right: 0.5rem;
+        }
+
+        .rating span {
+            margin-left: 0.5rem;
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            color: #2c5530;
+        }
+
+        /* About */
+        .about {
+            background-color: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            color: #2c5530;
+            margin-bottom: 1rem;
+        }
+
+        /* Facilities */
+        .facilities {
+            background-color: #f8f9fa;
+        }
+
+        .facilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .facility-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .facility-card i {
+            font-size: 3rem;
+            color: #2c5530;
+            margin-bottom: 1rem;
+        }
+
+        /* Reviews */
+        .reviews {
+            background-color: white;
+        }
+
+        .reviews-content {
+            text-align: center;
+        }
+
+        .review-rating {
+            font-size: 3rem;
+            color: #ffd700;
+            margin-bottom: 0.5rem;
+        }
+
+        .review-count {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        /* Contact */
+        .contact {
+            background-color: #2c5530;
+            color: white;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .contact-item {
+            text-align: center;
+        }
+
+        .contact-item i {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .contact-item h3 {
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a3d1f;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .facilities-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Icons (using CSS) */
+        .icon-soccer::before { content: '⚽'; }
+        .icon-clock::before { content: '🕐'; }
+        .icon-users::before { content: '👥'; }
+        .icon-parking::before { content: '🚗'; }
+        .icon-location::before { content: '📍'; }
+        .icon-phone::before { content: '📞'; }
+        .icon-star::before { content: '⭐'; }
+    </style>
 </head>
 <body>
-    <!-- Blank white page -->
+    <header>
+        <nav class="container">
+            <div class="logo">
+                Halishahar Turf <span>হালিশহর টার্ফ</span>
+            </div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#facilities">Facilities</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Halishahar Turf</h1>
+                <p>হালিশহর টার্ফ - Premier Soccer Field in Chittagong</p>
+                <div class="rating">
+                    <div class="stars">★★★★★</div>
+                    <span>4.5 • 17 reviews</span>
+                </div>
+                <p>Experience world-class soccer facilities at the heart of Chittagong</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Welcome to Halishahar Turf</h2>
+                    <p>Located at the beautiful চৌচালা সমুদ্র সৈকত in Chittagong, Halishahar Turf offers premium soccer field facilities for players of all levels. Our well-maintained turf provides an excellent playing surface for matches, training sessions, and recreational play.</p>
+                    <p>With a 4.5-star rating from 17 Google reviews, we pride ourselves on delivering top-quality service and maintaining the highest standards of safety and cleanliness.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1574623452334-1e0ac2b3ccb4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Soccer field" style="width: 100%; border-radius: 10px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="facilities" class="facilities">
+        <div class="container">
+            <h2 class="section-title">Our Facilities</h2>
+            <div class="facilities-grid">
+                <div class="facility-card">
+                    <div class="icon-soccer"></div>
+                    <h3>Premium Turf</h3>
+                    <p>State-of-the-art artificial turf surface for optimal playing conditions</p>
+                </div>
+                <div class="facility-card">
+                    <div class="icon-clock"></div>
+                    <h3>24/7 Access</h3>
+                    <p>Open round the clock for your convenience</p>
+                </div>
+                <div class="facility-card">
+                    <div class="icon-users"></div>
+                    <h3>Team Facilities</h3>
+                    <p>Changing rooms and equipment storage for teams</p>
+                </div>
+                <div class="facility-card">
+                    <div class="icon-parking"></div>
+                    <h3>Parking</h3>
+                    <p>Ample parking space available on-site</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews" class="reviews">
+        <div class="container">
+            <h2 class="section-title">Customer Reviews</h2>
+            <div class="reviews-content">
+                <div class="review-rating">★★★★★</div>
+                <h3>4.5 out of 5 stars</h3>
+                <p class="review-count">Based on 17 Google Reviews</p>
+                <p>Customers love our well-maintained facilities and excellent service. Join the satisfied players who choose Halishahar Turf for their soccer needs!</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-item">
+                    <div class="icon-location"></div>
+                    <h3>Location</h3>
+                    <p>চৌচালা সমুদ্র সৈকত, Chittagong</p>
+                    <p>Plus Code: 8QG9+W3G</p>
+                </div>
+                <div class="contact-item">
+                    <div class="icon-phone"></div>
+                    <h3>Phone</h3>
+                    <p>01977-933633</p>
+                </div>
+                <div class="contact-item">
+                    <h3>Book Now</h3>
+                    <p>Call us to reserve your slot</p>
+                    <p>Available 24/7</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Halishahar Turf. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
