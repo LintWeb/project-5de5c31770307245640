@@ -191,28 +191,66 @@
 
         /* Contact */
         .contact {
-            background-color: #2c5530;
+            background: linear-gradient(135deg, #2c5530 0%, #1a3d1f 100%);
             color: white;
+            position: relative;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1574623452334-1e0ac2b3ccb4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80') no-repeat center center/cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .contact .container {
+            position: relative;
+            z-index: 1;
         }
 
         .contact-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
 
         .contact-item {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2.5rem 2rem;
+            border-radius: 15px;
             text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            background-color: rgba(255, 255, 255, 0.15);
         }
 
         .contact-item i {
-            font-size: 2rem;
-            margin-bottom: 1rem;
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
             display: block;
+            opacity: 0.9;
         }
 
         .contact-item h3 {
             margin-bottom: 1rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .contact-item p {
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
         }
 
         /* Footer */
@@ -365,11 +403,21 @@
                     <h3>Phone</h3>
                     <p>01977-933633</p>
                 </div>
-                <div class="contact-item">
-                    <h3>Book Now</h3>
-                    <p>Call us to reserve your slot</p>
-                    <p>Available 24/7</p>
-                </div>
+            <div class="contact-item">
+                <h3>Book Now</h3>
+                <p>Call us to reserve your slot</p>
+                <p>Available 24/7</p>
+            </div>
+            <div class="contact-item">
+                <div style="font-size: 3rem; margin-bottom: 1.5rem;">📧</div>
+                <h3>Quick Inquiry</h3>
+                <form style="text-align: left; margin-top: 1rem;">
+                    <input type="text" placeholder="Name" style="width: 100%; padding: 0.5rem; margin-bottom: 0.5rem; border: none; border-radius: 5px; background: rgba(255,255,255,0.2); color: white;" required>
+                    <input type="email" placeholder="Email" style="width: 100%; padding: 0.5rem; margin-bottom: 0.5rem; border: none; border-radius: 5px; background: rgba(255,255,255,0.2); color: white;" required>
+                    <textarea placeholder="Message" style="width: 100%; padding: 0.5rem; margin-bottom: 1rem; border: none; border-radius: 5px; background: rgba(255,255,255,0.2); color: white; resize: vertical;" rows="3"></textarea>
+                    <button type="submit" style="width: 100%; padding: 0.5rem; border: none; border-radius: 5px; background: #ffd700; color: #2c5530; font-weight: bold; cursor: pointer;">Send Message</button>
+                </form>
+            </div>
             </div>
         </div>
     </section>
